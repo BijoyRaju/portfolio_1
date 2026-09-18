@@ -165,7 +165,7 @@ export default function Hero() {
               passion: <span className="code-orange">"Creating Impact"</span>,
               {"\n"} stack: [
               <span className="code-green">"Flutter", "Dart"</span>,{"\n"}{" "}
-              <span className="code-green">"Firebase"</span>]{"\n"}
+              <span className="code-green">"React", "Swift"</span>]{"\n"}
               {"}"}
               <span className="code-caret">▍</span>
             </pre>

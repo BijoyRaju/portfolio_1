@@ -105,8 +105,12 @@ export function Skills() {
       <div className="skills-grid" aria-live="polite">
         {skills
           .filter((skill) => filter === "All" || skill.category === filter)
-          .map((skill) => (
-            <GlowCard className="skill-card" key={skill.name}>
+          .map((skill, index) => (
+            <GlowCard
+              className="skill-card"
+              key={skill.name}
+              delay={(index % 6) * 0.045}
+            >
               <SkillIcon icon={skill.icon} color={skill.color} />
               <h3>{skill.name}</h3>
               <span>{skill.category}</span>

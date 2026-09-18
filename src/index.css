@@ -2723,3 +2723,165 @@ footer {
     max-width: 48rem;
   }
 }
+/* Motion accents: transform-based, with no layout changes. */
+.skill-card {
+  animation: none;
+}
+.skill-icon,
+.oracle-icon,
+.python-icon {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s;
+}
+.stat-icon {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s;
+}
+.button svg,
+.nav-cta svg,
+.project-title svg {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.button-primary,
+.nav-cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.button-primary:after,
+.nav-cta:after {
+  content: "";
+  position: absolute;
+  left: -35%;
+  top: -50%;
+  height: 200%;
+  width: 22%;
+  background: linear-gradient(90deg, transparent, #ffffff30, transparent);
+  transform: skewX(-22deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.orbit:after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  width: 5px;
+  height: 5px;
+  background: #68beff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #49aaff88;
+}
+.orbit-two:after {
+  background: #ab85ff;
+  box-shadow: 0 0 12px #ab85ff88;
+}
+.timeline-dot {
+  transition:
+    box-shadow 0.4s,
+    background 0.4s;
+}
+.contact-form-card input,
+.contact-form-card textarea {
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+  border-color: #649be4;
+  box-shadow: 0 0 0 3px #649be410;
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+  .orbit-one {
+    animation: portrait-orbit 48s linear infinite;
+  }
+  .orbit-two {
+    animation: portrait-orbit-reverse 64s linear infinite;
+  }
+  .orbit-path.inner {
+    animation: toolkit-orbit 55s linear infinite;
+  }
+  .scroll-cue svg {
+    animation: scroll-nudge 3.5s ease-in-out infinite;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .skill-card:hover .skill-icon,
+  .skill-card:hover .oracle-icon,
+  .skill-card:hover .python-icon {
+    transform: translateY(-3px) scale(1.1);
+    filter: drop-shadow(0 7px 12px #538aff25);
+  }
+  .stats > div:hover .stat-icon {
+    transform: translateY(-3px) rotate(-5deg);
+    box-shadow: 0 8px 20px #4f76d315;
+  }
+  .button:hover svg,
+  .nav-cta:hover svg,
+  .project-title:hover svg {
+    transform: translate(3px, -3px);
+  }
+  .button-primary:hover:after,
+  .nav-cta:hover:after {
+    animation: button-sheen 0.75s ease-out;
+  }
+  .timeline-item:hover .timeline-dot {
+    background: #a1b8ff;
+    box-shadow:
+      0 0 0 5px #6d8fff15,
+      0 0 18px #619aff55;
+  }
+}
+@keyframes portrait-orbit {
+  from {
+    transform: rotate(-25deg);
+  }
+  to {
+    transform: rotate(335deg);
+  }
+}
+@keyframes portrait-orbit-reverse {
+  from {
+    transform: rotate(42deg);
+  }
+  to {
+    transform: rotate(-318deg);
+  }
+}
+@keyframes toolkit-orbit {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+@keyframes button-sheen {
+  0% {
+    opacity: 0;
+    left: -35%;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 125%;
+  }
+}
+@keyframes scroll-nudge {
+  0%,
+  70%,
+  100% {
+    translate: 0 0;
+  }
+  82% {
+    translate: 0 4px;
+  }
+  92% {
+    translate: 0 -1px;
+  }
+}

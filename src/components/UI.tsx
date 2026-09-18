@@ -28,10 +28,10 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={reduced ? false : { opacity: 0, y: 22 }}
+      initial={reduced ? false : { opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -264,13 +264,20 @@ export function SkillIcon({ icon, color }: { icon: string; color: string }) {
 export function GlowCard({
   children,
   className = "",
+  delay = 0,
 }: {
   children: ReactNode;
   className?: string;
+  delay?: number;
 }) {
+  const reduced = useReducedMotion();
   return (
-    <div
+    <motion.div
       className={`glow-card ${className}`}
+      initial={reduced ? false : { opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-25px" }}
+      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
       onPointerMove={(e) => {
         const r = e.currentTarget.getBoundingClientRect();
         e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
@@ -278,6 +285,6 @@ export function GlowCard({
       }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
