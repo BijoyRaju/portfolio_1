@@ -1,0 +1,30 @@
+Bijoy Raju
+Senior Flutter Developer
+
+PROFILE
+Senior Flutter Developer building scalable, beautiful and user-focused digital experiences. Focused on clean architecture, thoughtful UI/UX and reliable backend integrations.
+
+SKILLS
+Flutter, Dart, Firebase, REST APIs, Oracle APEX, SQL, React, Python, Power BI, PostgreSQL, Git, Figma
+
+EXPERIENCE
+Developer Associate — Maathra
+- Developing and maintaining applications
+- Flutter development and backend/API integration
+- Building reusable UI components
+
+Data Specialist — State Street Corporation
+- Data analysis, SQL and reporting
+- Data-driven solutions
+
+EDUCATION
+BCA
+Post Graduate Diploma in Data Science
+
+SELECTED PROJECTS
+Dazzles HRMS — Attendance, QR check-in, leave requests and announcements.
+Dazzles — Internal product and inventory management. Flutter, mobile.
+The London Neapolitan Pizzeria — Pizza shop website with customer loyalty. React, Firebase.
+ERP / Admin Console — Business management dashboard with APIs and analytics. Flutter, REST APIs.
+
+This profile resume is generated from the portfolio brief. Contact details and employment dates can be added before publication.
