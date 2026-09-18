@@ -7,9 +7,11 @@ import { About, Skills, Experience, Technology } from "./sections/Content";
 const Projects = lazy(() => import("./sections/Projects"));
 const Contact = lazy(() => import("./sections/Contact"));
 export default function App() {
+  const base = import.meta.env.BASE_URL;
   const notFound =
-    window.location.pathname !== "/" &&
-    window.location.pathname !== "/index.html";
+    window.location.pathname !== base &&
+    window.location.pathname !== `${base}index.html` &&
+    window.location.pathname !== base.slice(0, -1);
   return (
     <MotionConfig reducedMotion="user">
       <DesktopEffects />
@@ -20,7 +22,7 @@ export default function App() {
               <span className="gradient-text">404</span>
               <h1>A little off the beaten path.</h1>
               <p>This page doesn’t exist, but there’s plenty to explore.</p>
-              <a className="button button-primary" href="/">
+              <a className="button button-primary" href={base}>
                 Back to the portfolio ↗
               </a>
             </div>

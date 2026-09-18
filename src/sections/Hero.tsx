@@ -121,8 +121,8 @@ export default function Hero() {
           <div className="orbit orbit-two" />
           <img
             className="portrait"
-            src="/images/bijoy-portrait.webp"
-            srcSet="/images/bijoy-portrait-small.webp 480w, /images/bijoy-portrait.webp 960w"
+            src={`${import.meta.env.BASE_URL}images/bijoy-portrait.webp`}
+            srcSet={`${import.meta.env.BASE_URL}images/bijoy-portrait-small.webp 480w, ${import.meta.env.BASE_URL}images/bijoy-portrait.webp 960w`}
             sizes="(min-width: 1024px) 570px, (min-width: 640px) 530px, calc(100vw - 40px)"
             width={960}
             height={960}

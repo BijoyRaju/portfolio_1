@@ -103,7 +103,11 @@ export function Button({
 }
 export function ResumeButton() {
   return (
-    <Button href="/Bijoy-Raju-CV.pdf" download secondary>
+    <Button
+      href={`${import.meta.env.BASE_URL}Bijoy-Raju-CV.pdf`}
+      download
+      secondary
+    >
       Download Resume
     </Button>
   );
