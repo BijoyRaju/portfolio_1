@@ -81,20 +81,67 @@ function Phone({
     </div>
   );
 }
+
+function DazzlesScreenshot({
+  screen,
+  alt,
+  secondary = false,
+}: {
+  screen: string;
+  alt: string;
+  secondary?: boolean;
+}) {
+  return (
+    <figure className={`iphone-frame ${secondary ? "iphone-secondary" : ""}`}>
+      <span className="iphone-speaker" aria-hidden="true" />
+      <img
+        src={`${import.meta.env.BASE_URL}images/${screen}`}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        width={720}
+        height={1600}
+      />
+      <span className="iphone-home-indicator" aria-hidden="true" />
+    </figure>
+  );
+}
+
 export function ProjectPreview({ id }: { id: string }) {
-  if (id === "dazzles" || id === "hrms")
+  if (id === "dazzles")
     return (
       <div
-        className={`project-preview phone-preview ${id === "hrms" ? "hrms-preview" : ""}`}
-        aria-label={`${id === "hrms" ? "HR management" : "Inventory application"} concept preview`}
+        className="project-preview phone-preview dazzles-preview"
+        aria-label="Dazzles inventory application shown on two iPhones"
         role="img"
       >
         <span className="preview-grid" />
-        <span className="preview-word">
-          {id === "hrms" ? "people first." : "work, simplified."}
+        <span className="preview-word">real app. real workflow.</span>
+        <DazzlesScreenshot
+          screen="dazzles-login.jpeg"
+          alt="Dazzles mobile app sign-in screen"
+          secondary
+        />
+        <DazzlesScreenshot
+          screen="dazzles-overview.jpeg"
+          alt="Dazzles mobile app business overview dashboard"
+        />
+        <span className="preview-label">
+          <Smartphone size={10} /> Available on iOS & Android
         </span>
-        <Phone hr={id === "hrms"} secondary />
-        <Phone hr={id === "hrms"} />
+      </div>
+    );
+  if (id === "hrms")
+    return (
+      <div
+        className="project-preview phone-preview hrms-preview"
+        aria-label="HR management concept preview"
+        role="img"
+      >
+        <span className="preview-grid" />
+        <span className="preview-word">people first.</span>
+        <Phone hr secondary />
+        <Phone hr />
         <span className="preview-label">
           <Smartphone size={10} /> iOS & Android
         </span>
@@ -155,6 +202,47 @@ export function ProjectPreview({ id }: { id: string }) {
             </div>
           </div>
         </div>
+      </div>
+    );
+  if (id === "erp")
+    return (
+      <div
+        className="project-preview erp-real-preview"
+        aria-label="ERP admin console login and dashboard screens"
+        role="img"
+      >
+        <span className="erp-preview-glow" aria-hidden="true" />
+        <figure className="erp-browser erp-browser-login">
+          <figcaption>
+            <span aria-hidden="true">● ● ●</span>
+            <span>Secure access</span>
+          </figcaption>
+          <img
+            src={`${import.meta.env.BASE_URL}images/erp-login.jpeg`}
+            alt="Simple by Dazzles ERP secure login screen"
+            loading="lazy"
+            decoding="async"
+            width={1917}
+            height={1078}
+          />
+        </figure>
+        <figure className="erp-browser erp-browser-dashboard">
+          <figcaption>
+            <span aria-hidden="true">● ● ●</span>
+            <span>Simple by Dazzles · Dashboard</span>
+          </figcaption>
+          <img
+            src={`${import.meta.env.BASE_URL}images/erp-dashboard.jpeg`}
+            alt="Simple by Dazzles ERP operations dashboard"
+            loading="lazy"
+            decoding="async"
+            width={1917}
+            height={1078}
+          />
+        </figure>
+        <span className="preview-label erp-preview-label">
+          Live enterprise interface
+        </span>
       </div>
     );
   return (
@@ -271,7 +359,13 @@ function ProjectDialog({
             <span key={x}>{x}</span>
           ))}
         </div>
-        <p className="concept-note">Illustrative interface preview.</p>
+        <p className="concept-note">
+          {project.id === "dazzles"
+            ? "Screenshots from the live Dazzles mobile application."
+            : project.id === "erp"
+              ? "Screenshots from the live ERP / Admin Console."
+              : "Illustrative interface preview."}
+        </p>
         {project.url && (
           <a
             className="button button-primary"
