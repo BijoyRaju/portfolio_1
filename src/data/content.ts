@@ -60,10 +60,10 @@ export const projects = [
     label: "WEB EXPERIENCE",
     description:
       "A fresh digital experience for authentic pizza, with customer loyalty built in.",
-    stack: ["React", "Firebase", "Web"],
+    stack: ["Node.js", "React", "Web"],
     url: import.meta.env.VITE_PIZZERIA_URL,
     detail:
-      "A modern pizza shop website with a focus on a welcoming browsing experience and customer loyalty functionality. Built with React and Firebase.",
+      "A modern pizza shop website with a focus on a welcoming browsing experience and customer loyalty functionality. Built with React and Node.js.",
   },
   {
     id: "erp",
@@ -72,7 +72,7 @@ export const projects = [
     label: "BUSINESS APPLICATION",
     description:
       "Making complex business operations feel simple. Data, insights, and control in one place.",
-    stack: ["Flutter", "REST APIs", "Dashboard"],
+    stack: ["Node.js", "React", "Hostinger"],
     url: import.meta.env.VITE_ERP_URL,
     detail:
       "A business management dashboard that connects backend APIs with a modern interface. Designed to bring operational data, analytics, and everyday business tools into one workspace.",
